@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.css}">
+</head>
+<body>
+    <h1>天门人员展示</h1><br>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>身份</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="guest:${list}">
+                <th th:text="${guest.name}">name</th>
+                <th th:text="${guest.role}">role</th>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
