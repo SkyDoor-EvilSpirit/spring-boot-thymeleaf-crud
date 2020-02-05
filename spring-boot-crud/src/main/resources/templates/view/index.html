@@ -5,22 +5,32 @@
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.css}">
 </head>
-<body>
-    <h1>天门人员展示</h1><br>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>姓名</th>
-                <th>身份</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="guest:${list}">
-                <th th:text="${guest.name}">name</th>
-                <th th:text="${guest.role}">role</th>
-            </tr>
-        </tbody>
-    </table>
-
+<body class="container">
+<h1>天门人员展示</h1><br>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>姓名</th>
+        <th>身份</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="guest:${list}">
+        <th th:text="${guest.name}">name</th>
+        <th th:text="${guest.role}">role</th>
+        <th>
+            <a th:href="@{/guest/updateview(name=${guest.name})}" class="btn btn-info">编辑</a>
+        </th>
+        <th>
+            <a th:href="@{/guest/delete(name=${guest.name})}" class="btn btn-info">删除</a>
+        </th>
+    </tr>
+    </tbody>
+</table>
+<div class="form-group">
+    <div class="col-sm-2 control-label">
+        <a href="/guest/addview" th:href="@{/guest/addview}" class="btn btn-info">add</a>
+    </div>
+</div>
 </body>
 </html>

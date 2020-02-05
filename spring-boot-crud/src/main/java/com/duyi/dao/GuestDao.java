@@ -22,4 +22,27 @@ public class GuestDao {
     public List<Guest> findAll(){
         return list;
     }
+
+    public void insert(Guest guest) {
+        list.add(guest);
+    }
+
+    public Guest selectOne(String name) {
+        for (Guest guest:list){
+            if (guest.getName().equals(name)){
+                return guest;
+            }
+        }
+        return null;
+    }
+
+    public void update(Guest newGuest) {
+        Guest oldGuest = selectOne(newGuest.getName());
+        oldGuest.setRole(newGuest.getRole());
+    }
+
+    public void delete(String name) {
+        Guest guest = selectOne(name);
+        list.remove(guest);
+    }
 }

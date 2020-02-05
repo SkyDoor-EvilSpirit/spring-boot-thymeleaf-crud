@@ -6,5 +6,13 @@ import java.util.List;
 import java.util.Map;
 
 public interface GuestService {
-    public List<Guest> list();
+    List<Guest> list();
+
+    void add(Guest guest);
+
+    Guest get(String name);
+
+    void update(Guest guest);
+
+    void delete(String name);
 }

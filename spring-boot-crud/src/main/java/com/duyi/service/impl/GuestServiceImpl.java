@@ -15,4 +15,26 @@ public class GuestServiceImpl implements GuestService {
     public List<Guest> list() {
         return dao.findAll();
     }
+
+    @Override
+    public void add(Guest guest) {
+        dao.insert(guest);
+    }
+
+    @Override
+    public Guest get(String name) {
+        return dao.selectOne(name);
+    }
+
+    @Override
+    public void update(Guest guest) {
+        dao.update(guest);
+    }
+
+    @Override
+    public void delete(String name) {
+        dao.delete(name);
+    }
+
+
 }
