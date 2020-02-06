@@ -8,9 +8,9 @@ spring:
     username: root
     password: 54tanghui
 #mybatis整合
-mybatis:
-#  第一种方法：配置mybatis-config.xml
-#  config-location: classpath:mybatis-config.xml
-#  第二种简单的方法:直接将config里的内容配置进来代替
-  mapper-locations: classpath:*/mapper/*
-  type-aliases-package: com.duyi.model
+#mybatis:
+##  第一种方法：配置mybatis-config.xml
+##  config-location: classpath:mybatis-config.xml
+##  第二种简单的方法:直接将config里的内容配置进来代替
+#  mapper-locations: classpath*:*/mapper/*.xml
+#  type-aliases-package: com.duyi.model

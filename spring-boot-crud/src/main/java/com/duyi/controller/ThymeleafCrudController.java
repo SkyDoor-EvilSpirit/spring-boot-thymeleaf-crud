@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/guest")
@@ -23,5 +24,13 @@ public class ThymeleafCrudController {
         List<Guest> list = service.list();
         model.addAttribute("list",list);
         return path+"/index";
+    }
+
+    @RequestMapping(path = "/{name}/{role}")
+    @ResponseBody
+    public Object selectOne(Guest guest){
+        String name = guest.getName();
+        String role = guest.getRole();
+        return service.selectOne(name,role);
     }
 }

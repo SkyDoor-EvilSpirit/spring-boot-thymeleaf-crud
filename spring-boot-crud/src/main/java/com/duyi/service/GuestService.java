@@ -5,4 +5,6 @@ import java.util.List;
 public interface GuestService {
     List<Guest> list();
 
+    Guest selectOne(String name,String role);
+
 }

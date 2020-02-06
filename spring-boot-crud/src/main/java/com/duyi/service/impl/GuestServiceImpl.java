@@ -17,4 +17,10 @@ public class GuestServiceImpl implements GuestService {
         return all;
     }
 
+    @Override
+    public Guest selectOne(String name,String role) {
+        return mapper.select(name,role);
+    }
+
+
 }
