@@ -1,26 +1,24 @@
 package com.duyi.service.impl;
 
+import com.duyi.mapper1.GuestMapper1;
+import com.duyi.mapper2.GuestMapper2;
 import com.duyi.model.Guest;
-import com.duyi.mapper.GuestMapper;
-import com.duyi.service.GuestService;
+import com.duyi.service.IGuestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
+
 @Service
-public class GuestServiceImpl implements GuestService {
+public class GuestServiceImpl implements IGuestService {
 
     @Autowired
-    private GuestMapper mapper;
-
-    public List<Guest> list() {
-        List<Guest> all = mapper.findAll();
-        return all;
-    }
+    private GuestMapper1 guestMapper1;
+    @Autowired
+    private GuestMapper2 guestMapper2;
 
     @Override
-    public Guest selectOne(String name,String role) {
-        return mapper.select(name,role);
+    public List<Guest> list() {
+        return guestMapper2.list();
     }
-
-
 }

@@ -4,9 +4,14 @@ server:
 #  配置数据源
 spring:
   datasource:
-    url: jdbc:mysql://cdb-ju9034j0.cd.tencentcdb.com:10051/test_schema
-    username: root
-    password: 54tanghui
+    db1:
+      jdbc-url: jdbc:mysql://cdb-ju9034j0.cd.tencentcdb.com:10051/test_schema
+      username: root
+      password: 54tanghui
+    db2:
+      jdbc-url: jdbc:mysql://cdb-ju9034j0.cd.tencentcdb.com:10051/bak_schema
+      username: root
+      password: 54tanghui
 #mybatis整合
 #mybatis:
 ##  第一种方法：配置mybatis-config.xml

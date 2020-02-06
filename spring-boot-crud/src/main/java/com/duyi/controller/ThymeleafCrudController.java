@@ -1,21 +1,20 @@
 package com.duyi.controller;
 
 import com.duyi.model.Guest;
-import com.duyi.service.GuestService;
+import com.duyi.service.IGuestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/guest")
 public class ThymeleafCrudController {
 
     @Autowired
-    private GuestService service;
+    private IGuestService service;
 //    返回页面的路径
     private String path="view";
 
@@ -26,11 +25,4 @@ public class ThymeleafCrudController {
         return path+"/index";
     }
 
-    @RequestMapping(path = "/{name}/{role}")
-    @ResponseBody
-    public Object selectOne(Guest guest){
-        String name = guest.getName();
-        String role = guest.getRole();
-        return service.selectOne(name,role);
-    }
 }
