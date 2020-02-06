@@ -1,8 +1,8 @@
 package com.duyi.service.impl;
 
 import com.duyi.model.Guest;
-import com.duyi.mapper.GuestMapper;
 import com.duyi.service.GuestService;
+import com.duyi.tk.mapper.GuestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -13,13 +13,13 @@ public class GuestServiceImpl implements GuestService {
     private GuestMapper mapper;
 
     public List<Guest> list() {
-        List<Guest> all = mapper.findAll();
+        List<Guest> all = mapper.selectAll();
         return all;
     }
 
     @Override
     public Guest selectOne(String name,String role) {
-        return mapper.select(name,role);
+        return mapper.selectOne(new Guest(null, name, role));
     }
 
 
