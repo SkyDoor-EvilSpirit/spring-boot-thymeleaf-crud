@@ -7,12 +7,10 @@ spring:
     url: jdbc:mysql://cdb-ju9034j0.cd.tencentcdb.com:10051/test_schema
     username: root
     password: 54tanghui
-#jpa相关的配置
-  jpa:
-#    自动创建、更新、验证数据库结构
-    hibernate:
-      ddl-auto: update
-#    设置数据库引擎为InnoDB
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-#    打印sql语句，方便调试
-    show-sql: true
+#mybatis整合
+mybatis:
+#  第一种方法：配置mybatis-config.xml
+#  config-location: classpath:mybatis-config.xml
+#  第二种简单的方法:直接将config里的内容配置进来代替
+  mapper-locations: classpath:*/mapper/*
+  type-aliases-package: com.duyi.model

@@ -1,7 +1,7 @@
 package com.duyi.service.impl;
 
 import com.duyi.model.Guest;
-import com.duyi.repository.GuestRepository;
+import com.duyi.mapper.GuestMapper;
 import com.duyi.service.GuestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,10 +10,10 @@ import java.util.List;
 public class GuestServiceImpl implements GuestService {
 
     @Autowired
-    private GuestRepository repository;
+    private GuestMapper mapper;
 
     public List<Guest> list() {
-        List<Guest> all = repository.findAll();
+        List<Guest> all = mapper.findAll();
         return all;
     }
 
