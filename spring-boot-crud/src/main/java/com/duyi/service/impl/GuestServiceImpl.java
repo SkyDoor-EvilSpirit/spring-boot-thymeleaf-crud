@@ -11,12 +11,10 @@ import java.util.List;
 
 @Service
 public class GuestServiceImpl implements IGuestService {
-
     @Autowired
     private GuestMapper1 guestMapper1;
     @Autowired
     private GuestMapper2 guestMapper2;
-
     @Override
     public List<Guest> list() {
         return guestMapper2.list();
